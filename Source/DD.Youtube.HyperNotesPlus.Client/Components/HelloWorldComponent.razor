@@ -1,0 +1,27 @@
+﻿<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                @title.ToUpper()
+            </h1>
+            <h2 class="subtitle">
+                Contador = @contador
+            </h2>
+            <button @onclick="IncreaseCounter" class="button is-link">Incrementar</button>
+        </div>
+    </div>
+</section>
+
+
+@code {
+
+    private string title = "Hello, world!";
+    private int contador = 0;
+
+
+    private void IncreaseCounter()
+    {
+        contador++;
+    }
+
+}

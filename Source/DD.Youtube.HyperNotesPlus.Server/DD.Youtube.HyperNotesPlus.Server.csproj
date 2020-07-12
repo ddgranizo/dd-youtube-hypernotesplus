@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <Watch Include="..\**\*.razor" />
-    <Watch Include="..\**\*.cs" Exclude="..\**\bin;..\**\obj;..\**\Debug;..\**\Release" />
+    <Watch Include="..\**\*.cs" Exclude="..\**\*.g.cs" />
     <Watch Include="..\**\*.css" />
   </ItemGroup>
 </Project>
