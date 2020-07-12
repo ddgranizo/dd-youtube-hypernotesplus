@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0-msbuild2-final" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DD.Youtube.HyperNotesPlus.Client\DD.Youtube.HyperNotesPlus.Client.csproj" />
+    <ProjectReference Include="..\DD.Youtube.HyperNotesPlus.Shared\DD.Youtube.HyperNotesPlus.Shared.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Watch Include="..\**\*.razor" />
+    <Watch Include="..\**\*.cs" Exclude="..\**\bin;..\**\obj;..\**\Debug;..\**\Release" />
+    <Watch Include="..\**\*.css" />
+  </ItemGroup>
+</Project>
