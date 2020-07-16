@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DD.Youtube.HyperNotesPlus.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DD.Youtube.HyperNotesPlus.Client", "DD.Youtube.HyperNotesPlus.Client\DD.Youtube.HyperNotesPlus.Client.csproj", "{C160480E-EC23-4E32-BE7F-E844B80A0FFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DD.Youtube.HyperNotesPlus.Domain.Common", "DD.Youtube.HyperNotesPlus.Domain.Common\DD.Youtube.HyperNotesPlus.Domain.Common.csproj", "{83C9DE5E-9239-4669-8110-861EEC36DF03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DD.Youtube.HyperNotesPlus.Domain", "DD.Youtube.HyperNotesPlus.Domain\DD.Youtube.HyperNotesPlus.Domain.csproj", "{A25B1090-640E-4A5B-BA12-85325AD3D30E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{C160480E-EC23-4E32-BE7F-E844B80A0FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C160480E-EC23-4E32-BE7F-E844B80A0FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C160480E-EC23-4E32-BE7F-E844B80A0FFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C9DE5E-9239-4669-8110-861EEC36DF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C9DE5E-9239-4669-8110-861EEC36DF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C9DE5E-9239-4669-8110-861EEC36DF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C9DE5E-9239-4669-8110-861EEC36DF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A25B1090-640E-4A5B-BA12-85325AD3D30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A25B1090-640E-4A5B-BA12-85325AD3D30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A25B1090-640E-4A5B-BA12-85325AD3D30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A25B1090-640E-4A5B-BA12-85325AD3D30E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
