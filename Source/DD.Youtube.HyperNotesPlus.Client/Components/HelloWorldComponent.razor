@@ -1,8 +1,11 @@
-﻿<section class="hero">
+﻿
+@inherits HelloWorldComponentBase
+
+<section class="hero">
     <div class="hero-body">
         <div class="container">
             <h1 class="title">
-                @title.ToUpper()
+                @StringUtilities.ToUpper(title)
             </h1>
             <h2 class="subtitle">
                 Contador = @contador
@@ -11,17 +14,3 @@
         </div>
     </div>
 </section>
-
-
-@code {
-
-    private string title = "Hello, world!";
-    private int contador = 0;
-
-
-    private void IncreaseCounter()
-    {
-        contador++;
-    }
-
-}
