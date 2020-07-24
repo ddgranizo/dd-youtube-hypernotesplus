@@ -18,3 +18,10 @@
     top: 0.5rem;
 }
 
+
+.loading-bar-container{
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    width: 80%
+}
