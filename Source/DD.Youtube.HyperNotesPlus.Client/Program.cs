@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DD.Youtube.HyperNotesPlus.Domain.Notes;
 
 namespace DD.Youtube.HyperNotesPlus.Client
 {
@@ -19,7 +20,15 @@ namespace DD.Youtube.HyperNotesPlus.Client
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+            AddServices(builder.Services);
+
             await builder.Build().RunAsync();
+        }
+
+
+        private static void AddServices(IServiceCollection services)
+        {
+            services.AddSingleton<INoteService, NoteService>();
         }
     }
 }
