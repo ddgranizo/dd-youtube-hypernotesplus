@@ -13,7 +13,7 @@ namespace DD.Youtube.HyperNotesPlus.Domain.Notes
 
         public async Task<IEnumerable<Note>> GetAllNotes()
         {
-            await Task.Delay(2000);
+            await Task.Delay(200);
             return new List<Note>()
             {
                 {new Note{ Name = "Nota1", Content = "Contenido nota 1", State = Domain.Common.Definitions.StateEnum.Enabled }},

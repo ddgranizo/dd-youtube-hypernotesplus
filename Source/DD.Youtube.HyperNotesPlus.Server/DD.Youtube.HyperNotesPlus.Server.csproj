@@ -19,6 +19,7 @@
 
 
   <ItemGroup>
+    <Watch Include="..\**\*.csproj" />
     <Watch Include="..\**\*.razor" />
     <Watch Include="..\**\*.cs" Exclude="..\**\*.g.cs" />
     <Watch Include="..\**\*.css" />

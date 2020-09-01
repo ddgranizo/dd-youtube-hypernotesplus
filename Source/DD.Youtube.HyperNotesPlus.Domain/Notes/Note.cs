@@ -7,6 +7,12 @@ namespace DD.Youtube.HyperNotesPlus.Domain.Notes
 {
     public class Note
     {
+        public Note()
+        {
+            Id = Guid.NewGuid();
+        }
+
+
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }
