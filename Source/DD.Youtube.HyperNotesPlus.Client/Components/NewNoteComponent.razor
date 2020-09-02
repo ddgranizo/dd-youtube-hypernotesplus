@@ -1,0 +1,15 @@
+﻿@inject NavigationManager NavigationManager
+
+<div class="new-note-wrapper">
+    <button class="button is-danger is-rounded" @onclick="CreateNewNote">+</button>
+</div>
+
+@code {
+
+
+    void CreateNewNote()
+    {
+        NavigationManager.NavigateTo("notes/new");
+    }
+
+}

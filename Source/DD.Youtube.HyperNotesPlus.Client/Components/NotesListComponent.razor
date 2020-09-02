@@ -1,4 +1,6 @@
 ﻿@inject INoteService NoteService
+@inject NavigationManager NavigationManager
+
 
 <h3>NotesListComponent</h3>
 
@@ -13,7 +15,7 @@ else
     {
         @if (note.State == Domain.Common.Definitions.StateEnum.Enabled)
         {
-            <article class="media">
+            <article class="media" @onclick="(e => NavigateToNote(note.Id))">
                 <figure class="media-left">
                     <p class="image is-64x64">
                         <img src="https://bulma.io/images/placeholders/128x128.png">
@@ -47,11 +49,12 @@ else
             </article>
         }
     }
+
+    <NewNoteComponent />
+
+
 }
-
-
 @code {
-
     private List<Note> notes = new List<Note>();
     private bool isLoading = true;
 
@@ -61,6 +64,11 @@ else
         var response = await NoteService.GetAllNotes();
         notes = response.ToList();
         isLoading = false;
+    }
+
+    private void NavigateToNote(Guid id)
+    {
+        NavigationManager.NavigateTo($"notes/{id}");
     }
 
 }

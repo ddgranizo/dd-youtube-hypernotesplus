@@ -1,0 +1,14 @@
+﻿@page "/notes/{NoteId}"
+@page "/notes/new"
+
+<h3>Note</h3>
+
+<div>NoteId=@NoteId</div>
+
+@code {
+
+    [Parameter]
+    public string NoteId { get; set; }
+
+
+}
