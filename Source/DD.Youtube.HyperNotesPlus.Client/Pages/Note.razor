@@ -1,5 +1,4 @@
-﻿@inject ILocalStorageService LocalStorageService
-
+﻿@inject IJSRuntime JS
 @page "/notes/{NoteId}"
 @page "/notes/new"
 
@@ -7,34 +6,27 @@
 
 <div>NoteId=@NoteId</div>
 
-<button class="button" @onclick="Add">Add to local storage</button>
-<button class="button" @onclick="Get">Get from local storage</button>
-<button class="button" @onclick="Remove">Remove from local storage</button>
+<button class="button" @onclick="SetIntanceAndExecute">Execute js function</button>
 
-<div>Customer email = @customerEmail</div>
+<div>Returned value = @returnedValue</div>
 
 @code {
 
     [Parameter]
     public string NoteId { get; set; }
 
-    private string customerEmail;
+    private string returnedValue;
 
-
-    private async Task Add()
+    [JSInvokable]
+    public async Task JsCallback(string value)
     {
-        await LocalStorageService.SetToLocalStorage("customer.email", "test@email.com");
+        returnedValue = value;
     }
 
-    private async Task Get()
+    private async Task SetIntanceAndExecute()
     {
-        customerEmail = await LocalStorageService.GetFromLocalStorage("customer.email");
+        await JS.InvokeVoidAsync("SetDotnetInstance", Microsoft.JSInterop.DotNetObjectReference.Create(this));
+        await JS.InvokeVoidAsync("InvokeMethod", " Hola esto es un test " );
     }
-
-    private async Task Remove()
-    {
-        await LocalStorageService.RemoveFromLocalStorage("customer.email");
-    }
-
 
 }
