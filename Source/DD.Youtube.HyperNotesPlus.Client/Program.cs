@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using DD.Youtube.HyperNotesPlus.Domain.Notes;
+using DD.Youtube.HyperNotesPlus.Client.Extensions.Services;
+using DD.Youtube.HyperNotesPlus.Client.Extensions.Services.Implementations;
 
 namespace DD.Youtube.HyperNotesPlus.Client
 {
@@ -29,6 +31,7 @@ namespace DD.Youtube.HyperNotesPlus.Client
         private static void AddServices(IServiceCollection services)
         {
             services.AddSingleton<INoteService, NoteService>();
+            services.AddSingleton<ILocalStorageService, LocalStorageJsRuntimeService>();
         }
     }
 }
