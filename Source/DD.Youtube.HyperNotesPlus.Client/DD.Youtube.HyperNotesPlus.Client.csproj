@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DD.Youtube.HyperNotesPlus.Client.Extensions\DD.Youtube.HyperNotesPlus.Client.Extensions.csproj" />
     <ProjectReference Include="..\DD.Youtube.HyperNotesPlus.Domain.Common\DD.Youtube.HyperNotesPlus.Domain.Common.csproj" />
     <ProjectReference Include="..\DD.Youtube.HyperNotesPlus.Domain\DD.Youtube.HyperNotesPlus.Domain.csproj" />
     <ProjectReference Include="..\DD.Youtube.HyperNotesPlus.Shared\DD.Youtube.HyperNotesPlus.Shared.csproj" />

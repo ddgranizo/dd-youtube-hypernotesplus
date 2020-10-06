@@ -1,14 +1,40 @@
-﻿@page "/notes/{NoteId}"
+﻿@inject ILocalStorageService LocalStorageService
+
+@page "/notes/{NoteId}"
 @page "/notes/new"
 
 <h3>Note</h3>
 
 <div>NoteId=@NoteId</div>
 
+<button class="button" @onclick="Add">Add to local storage</button>
+<button class="button" @onclick="Get">Get from local storage</button>
+<button class="button" @onclick="Remove">Remove from local storage</button>
+
+<div>Customer email = @customerEmail</div>
+
 @code {
 
     [Parameter]
     public string NoteId { get; set; }
+
+    private string customerEmail;
+
+
+    private async Task Add()
+    {
+        await LocalStorageService.SetToLocalStorage("customer.email", "test@email.com");
+    }
+
+    private async Task Get()
+    {
+        customerEmail = await LocalStorageService.GetFromLocalStorage("customer.email");
+    }
+
+    private async Task Remove()
+    {
+        await LocalStorageService.RemoveFromLocalStorage("customer.email");
+    }
 
 
 }
