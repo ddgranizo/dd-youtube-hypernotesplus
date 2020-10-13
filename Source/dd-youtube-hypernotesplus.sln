@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DD.Youtube.HyperNotesPlus.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DD.Youtube.HyperNotesPlus.Domain", "DD.Youtube.HyperNotesPlus.Domain\DD.Youtube.HyperNotesPlus.Domain.csproj", "{A25B1090-640E-4A5B-BA12-85325AD3D30E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DD.Youtube.HyperNotesPlus.Client.Extensions", "DD.Youtube.HyperNotesPlus.Client.Extensions\DD.Youtube.HyperNotesPlus.Client.Extensions.csproj", "{23277540-F78E-442F-B6A4-3C857F90B1CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DD.Youtube.HyperNotesPlus.Client.Extensions", "DD.Youtube.HyperNotesPlus.Client.Extensions\DD.Youtube.HyperNotesPlus.Client.Extensions.csproj", "{23277540-F78E-442F-B6A4-3C857F90B1CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
