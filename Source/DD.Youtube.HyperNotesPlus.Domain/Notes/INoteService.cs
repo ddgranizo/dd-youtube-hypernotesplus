@@ -8,6 +8,6 @@ namespace DD.Youtube.HyperNotesPlus.Domain.Notes
     public interface INoteService
     {
         Task<IEnumerable<Note>> GetAllNotes();
-        Task<Note> GetNote(Guid id);
+        Task<Note> GetNote(Guid id); 
     }
 }
