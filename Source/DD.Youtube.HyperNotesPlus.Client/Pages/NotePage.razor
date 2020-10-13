@@ -8,9 +8,15 @@
 }
 else
 {
-    <NoteEditor Note="note" SavedHandler="OnSaved">
+    <NoteEditor Note="note" SavedHandler="OnSaved" @ref="noteEditorRef">
 
     </NoteEditor>
+
+    <div>
+
+        <button class="button" @onclick="OnSimulateNewNote">Notificar de nueva versión</button>
+
+    </div>
 }
 
 
@@ -21,6 +27,13 @@ else
 
     private bool isLoading = false;
     private Note note;
+
+    private NoteEditor noteEditorRef;
+
+    private void OnSimulateNewNote()
+    {
+        noteEditorRef.AdviceNewVersion();
+    }
 
     private async Task OnSaved(Note note)
     {

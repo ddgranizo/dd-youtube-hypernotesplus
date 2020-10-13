@@ -5,6 +5,14 @@
     Content=@Note.Content
 </div>
 
+@if (newVersionRetrived)
+{
+    <div>Warning: new version of the note retrived</div>
+}
+<div>
+
+</div>
+
 <textarea @bind="Note.Content"></textarea>
 
 <button class="button" @onclick="OnSaveButtonClick">Guardar</button>
@@ -14,6 +22,13 @@
     [Parameter] public Note Note { get; set; }
     [Parameter] public EventCallback<Note> SavedHandler { get; set; }
 
+
+    private bool newVersionRetrived;
+
+    public void AdviceNewVersion()
+    {
+        newVersionRetrived = true;
+    }
 
     private async Task OnSaveButtonClick()
     {
