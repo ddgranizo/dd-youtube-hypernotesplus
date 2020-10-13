@@ -9,7 +9,7 @@ namespace DD.Youtube.HyperNotesPlus.Domain.Notes
     {
         public Note()
         {
-            Id = Guid.NewGuid();
+            
         }
 
 

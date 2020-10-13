@@ -1,0 +1,46 @@
+﻿@inject INoteService NoteService
+@page "/notes/{NoteId}"
+@page "/notes/new"
+
+@if (isLoading)
+{
+    <LoadingComponent />
+}
+else
+{
+    <NoteEditor Note="note">
+
+    </NoteEditor>
+}
+
+
+@code {
+
+    [Parameter]
+    public string NoteId { get; set; }
+
+    private bool isLoading = false;
+    private Note note;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!string.IsNullOrEmpty(NoteId)
+            && Guid.TryParse(NoteId, out Guid noteId))
+        {
+            await LoadNote(noteId);
+        }
+        else
+        {
+            note = new Note();
+        }
+    }
+
+
+    private async Task LoadNote(Guid id)
+    {
+        isLoading = true;
+        note = await NoteService.GetNote(id);
+        isLoading = false;
+    }
+
+}
