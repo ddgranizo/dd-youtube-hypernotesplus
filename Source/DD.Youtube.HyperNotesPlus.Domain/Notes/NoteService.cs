@@ -11,6 +11,18 @@ namespace DD.Youtube.HyperNotesPlus.Domain.Notes
         {
         }
 
+        public async Task<Guid> Create(Note note)
+        {
+            await Task.Delay(200);
+            return Guid.NewGuid();
+        }
+
+        public async Task Update(Guid id, Note note)
+        {
+            await Task.Delay(200);
+        }
+
+
         public async Task<Note> GetNote(Guid id)
         {
             await Task.Delay(200);

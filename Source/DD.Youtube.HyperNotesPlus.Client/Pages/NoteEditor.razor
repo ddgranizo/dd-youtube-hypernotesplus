@@ -5,9 +5,18 @@
     Content=@Note.Content
 </div>
 
+<textarea @bind="Note.Content"></textarea>
+
+<button class="button" @onclick="OnSaveButtonClick">Guardar</button>
 
 @code {
 
     [Parameter] public Note Note { get; set; }
+    [Parameter] public EventCallback<Note> SavedHandler { get; set; }
 
+
+    private async Task OnSaveButtonClick()
+    {
+        await SavedHandler.InvokeAsync(Note);
+    }
 }
