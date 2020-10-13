@@ -8,7 +8,7 @@
 }
 else
 {
-    <NoteEditor Note="note">
+    <NoteEditor Note="note" SavedHandler="OnSaved">
 
     </NoteEditor>
 }
@@ -22,6 +22,22 @@ else
     private bool isLoading = false;
     private Note note;
 
+    private async Task OnSaved(Note note)
+    {
+        if (note.Id != Guid.Empty)
+        {
+            await NoteService.Update(note.Id, note);
+            Console.WriteLine("Updated!");
+            Console.WriteLine($"Content = {note.Content}");
+        }
+        else
+        {
+            await NoteService.Create(note);
+            Console.WriteLine("Created!");
+            Console.WriteLine($"Content = {note.Content}");
+        }
+    }
+
     protected override async Task OnInitializedAsync()
     {
         if (!string.IsNullOrEmpty(NoteId)
@@ -34,7 +50,6 @@ else
             note = new Note();
         }
     }
-
 
     private async Task LoadNote(Guid id)
     {
