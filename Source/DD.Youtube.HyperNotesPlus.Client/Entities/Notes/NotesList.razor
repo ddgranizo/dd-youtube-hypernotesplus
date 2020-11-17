@@ -13,16 +13,11 @@ else
 {
 
     <GenericList Items="notes" Filter="(k=> k.State == Domain.Common.Definitions.StateEnum.Enabled)">
-        <NotePreview Note="context"/>
+        <ChildContent>
+            <NotePreview Note="context" />
+        </ChildContent>
+        
     </GenericList>
-
-    @*@foreach (var note in notes)
-    {
-        @if (note.State == Domain.Common.Definitions.StateEnum.Enabled)
-        {
-            <NotePreview Note="note"/>
-        }
-    }*@
 
     <NewNoteButton />
 
@@ -31,7 +26,6 @@ else
 @code {
     private List<Note> notes = new List<Note>();
     private bool isLoading = true;
-
 
     protected override async Task OnInitializedAsync()
     {
