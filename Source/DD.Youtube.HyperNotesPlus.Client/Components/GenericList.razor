@@ -1,0 +1,12 @@
+﻿@typeparam T
+
+@foreach (var item in Items.Where(k=> Filter?.Invoke(k) ?? true))
+{
+    @ChildContent(item)
+}
+
+@code {
+    [Parameter] public List<T> Items { get; set; }
+    [Parameter] public RenderFragment<T> ChildContent { get; set; }
+    [Parameter] public Predicate<T> Filter { get; set; }
+}

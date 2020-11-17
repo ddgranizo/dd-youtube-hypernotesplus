@@ -1,0 +1,45 @@
+﻿@inject INoteService NoteService
+@inject NavigationManager NavigationManager
+
+
+<h3>NotesListComponent</h3>
+
+
+@if (isLoading)
+{
+    <LoadingComponent />
+}
+else
+{
+
+    <GenericList Items="notes" Filter="(k=> k.State == Domain.Common.Definitions.StateEnum.Enabled)">
+        <NotePreview Note="context"/>
+    </GenericList>
+
+    @*@foreach (var note in notes)
+    {
+        @if (note.State == Domain.Common.Definitions.StateEnum.Enabled)
+        {
+            <NotePreview Note="note"/>
+        }
+    }*@
+
+    <NewNoteButton />
+
+
+}
+@code {
+    private List<Note> notes = new List<Note>();
+    private bool isLoading = true;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await NoteService.GetAllNotes();
+        notes = response.ToList();
+        isLoading = false;
+    }
+
+   
+
+}
