@@ -1,0 +1,50 @@
+﻿<h3>Counter</h3>
+<div>
+    Count = @counter
+</div>
+<button @onclick="(k => timer.Stop())" >Stop</button>
+@code {
+
+    private int counter;
+    private System.Timers.Timer timer;
+    [Parameter] public int InitialCounter { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("OnInitialized");
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += (sender, e) => IncreaseCounter();
+        timer.Start();
+    }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("OnParametersSet");
+        counter = InitialCounter;
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            //JS
+        }
+        Console.WriteLine("OnAfterRender");
+    }
+
+    protected override bool ShouldRender()
+    {
+        Console.WriteLine("ShouldRender");
+        return counter % 5 == 0;
+    }
+
+    private void IncreaseCounter()
+    {
+        counter++;
+        Console.WriteLine("Pre StateHasChanged");
+        StateHasChanged();
+        Console.WriteLine("Post StateHasChanged");
+
+    }
+}
